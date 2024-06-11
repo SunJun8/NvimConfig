@@ -85,7 +85,7 @@ return {
 
         --spectre
         ["<leader>s"]  = { name = "Spectre" },
-        ["<leader>S"]  = {
+        ["<leader>F"]  = {
           ":lua require(\'spectre\').open()<CR>",
           desc = "Open spectre search"
         },
@@ -99,13 +99,9 @@ return {
         },
 
         -- close buffer
-        ["<leader>c"]  = false,
-        ["<leader>x"]  = {
-          function() require("astronvim.utils.buffer").close() end, desc = "Close buffer"
-        },
-        ["<leader>X"]  = {
-          function() require("astronvim.utils.buffer").close(0, true) end, desc = "Force close buffer"
-        },
+        -- ["<leader>x"]  = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
+        -- ["<leader>X"]  = { function() require("astrocore.buffer").close(0, true) end, desc = "Force close buffer" },
+
 
         --Lspsaga
         ["<leader>lk"] = { "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga Hover doc" },
