@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Treesitter
 -- --------------------
 -- Treesitter customizations are handled with AstroCore
@@ -13,10 +11,21 @@ return {
     treesitter = {
       highlight = true, -- enable/disable treesitter based highlighting
       indent = true, -- enable/disable treesitter based indentation
-      auto_install = true, -- enable/disable automatic installation of detected languages
+      auto_install = false, -- enable/disable automatic installation of detected languages
+      sync_install = false,
+      git = {
+        ignore = 0, -- List of parsers to ignore installing when `sync_install` is true (e.g. { "javascript" })
+      },
       ensure_installed = {
+        "c",
+        "cpp",
+        "python",
+        "markdown",
+        "make",
+        "cmake",
+        "rust",
         "lua",
-        "vim",
+        "bash",
         -- add more arguments for adding more treesitter parsers
       },
     },
