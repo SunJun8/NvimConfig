@@ -1,15 +1,33 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Treesitter
 
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
+  dependencies = "hiphish/rainbow-delimiters.nvim",
+  opts = function(_, opts)
+    -- add more things to the ensure_installed table protecting against community packs modifying it
+    opts.ensure_installed = {
+      "c",
+      "cpp",
+      "python",
+      "markdown",
+      "make",
+      "cmake",
+      "rust",
       "lua",
-      "vim",
-      -- add more arguments for adding more treesitter parsers
-    },
-  },
+      "bash",
+    }
+
+    opts.indent = {
+      enable = true
+    }
+
+    opts.sync_install = false
+
+    opts.auto_install = false
+
+    opts.git = {
+      ignore = 0
+    }
+  end,
 }
