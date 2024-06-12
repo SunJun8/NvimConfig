@@ -74,7 +74,7 @@ return {
         ["<leader>o"]  = { "<cmd>Neotree toggle<CR>", desc = "Toggle Explorer" },
         ["<F8>"]       = {
           function()
-            require("telescope.builtin").find_files { hidden = true, no_ignore = true }
+            require("telescope.builtin").find_files { hidden = false, no_ignore = true }
           end,
           desc = 'Find all files',
         },

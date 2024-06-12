@@ -31,7 +31,7 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
-    enable = false,
+    enabled = false,
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       ensure_installed = {
