@@ -3,7 +3,7 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  dependencies = "p00f/nvim-ts-rainbow",
+  dependencies = "hiphish/rainbow-delimiters.nvim",
   opts = function(_, opts)
     -- add more things to the ensure_installed table protecting against community packs modifying it
     opts.ensure_installed = {
@@ -19,12 +19,6 @@ return {
       "rust",
       "vim",
       "lua",
-    }
-
-    opts.rainbow = {
-      enable = true,
-      extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-      max_file_lines = nil, -- Do not enable for files with more than n lines, int
     }
 
     opts.indent = {
