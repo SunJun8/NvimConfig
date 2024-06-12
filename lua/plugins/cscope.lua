@@ -10,7 +10,7 @@ return {
     }
   },
   opts = {
-    prefix = "<leader>x",                   -- prefix to trigger maps
+    prefix = "<Leader>c",                   -- prefix to trigger maps
     disable_maps = false,                   -- true disables my keymaps, only :Cscope will be loaded
     cscope = {
       db_file = "./cscope.out",             -- location of cscope db file
