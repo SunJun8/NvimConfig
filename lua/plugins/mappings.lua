@@ -66,10 +66,11 @@ return {
             desc = "Search current buffer"
           },
 
-          -- close buffer
-          -- ["<Leader>x"]  = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
-          -- ["<Leader>X"]  = { function() require("astrocore.buffer").close(0, true) end, desc = "Force close buffer" },
-
+          -- lsp
+          ["gra"] = false,
+          ["grn"] = false,
+          ["grr"] = false,
+          ["gr"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
         },
 
         i = {
@@ -90,6 +91,10 @@ return {
           -- clangformat
           -- ["<Leader>lm"] = { "<cmd>py3f /home/jokeo/tool/clang/tools/clang-format/clang-format.py<CR>", desc = "format cpp by clang format" },
         },
+        
+        x = {
+          ["gra"] = false,
+        },
       },
     },
   },
@@ -107,7 +112,6 @@ return {
           ["<Leader>lS"] = { "<cmd>Lspsaga outline<CR>", desc = "Lspsaga Symbols outline" },
 
           ["<Leader>lR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
-          ["gR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
         },
       },
     },
