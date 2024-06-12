@@ -69,9 +69,7 @@ return {
         ["<leader>g"]  = { name = "Git" },
 
         -- Neotree
-        ["<leader>e"]  = false,
         ["<F4>"]       = { "<cmd>Neotree toggle<CR>", desc = "Toggle Explorer" },
-        ["<leader>o"]  = { "<cmd>Neotree toggle<CR>", desc = "Toggle Explorer" },
         ["<F8>"]       = {
           function()
             require("telescope.builtin").find_files { hidden = false, no_ignore = true }
