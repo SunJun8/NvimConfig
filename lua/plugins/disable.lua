@@ -6,4 +6,5 @@ return {
   { "rcarriga/cmp-dap",      enabled = false, },
   { "nvim-neotest/nvim-nio", enabled = false, },
   { "kevinhwang91/nvim-ufo", enabled = false, },
+  { "stevearc/resession.nvim", enabled = false },
 }

@@ -80,15 +80,6 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-        --Lspsaga
-        ["<leader>lk"] = { "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga Hover doc" },
-        ["<leader>lg"] = { "<cmd>Lspsaga goto_definition<CR>", desc = "Lspsaga Goto definition" },
-        ["<leader>lp"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Lspsaga Preview definition" },
-        ["<leader>lF"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga finder" },
-        ["<leader>lS"] = { "<cmd>Lspsaga outline<CR>", desc = "Lspsaga Symbols outline" },
-
-        ["<Leader>lR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
-        ["gR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function
