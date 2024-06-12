@@ -1,8 +1,8 @@
 ---@type LazySpec
 return {
   -- You can disable default plugins as follows:
-  -- { "mfussenegger/nvim-dap", enabled = false, },
-  { "rcarriga/nvim-dap-ui",  enable = false, },
-
-  { "nvim-neotest/nvim-nio", enable = false },
+  { "mfussenegger/nvim-dap", enabled = false, },
+  { "rcarriga/nvim-dap-ui",  enabled = false, },
+  { "rcarriga/cmp-dap",      enabled = false, },
+  { "nvim-neotest/nvim-nio", enabled = false, },
 }
