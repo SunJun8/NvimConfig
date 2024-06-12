@@ -100,13 +100,6 @@ return {
         -- ["<leader>x"]  = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
         -- ["<leader>X"]  = { function() require("astrocore.buffer").close(0, true) end, desc = "Force close buffer" },
 
-
-        --Lspsaga
-        ["<leader>lk"] = { "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga Hover doc" },
-        ["<leader>lg"] = { "<cmd>Lspsaga goto_definition<CR>", desc = "Lspsaga Goto definition" },
-        ["<leader>lp"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Lspsaga Preview definition" },
-        ["<leader>lF"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga finder" },
-        ["<leader>lS"] = { "<cmd>Lspsaga outline<CR>", desc = "Lspsaga Symbols outline" },
       },
 
       i = {

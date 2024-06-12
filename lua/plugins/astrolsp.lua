@@ -12,15 +12,15 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
+      codelens = true,        -- enable/disable codelens refresh on start
+      inlay_hints = false,    -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = false, -- enable or disable format on save globally
+        enabled = false,    -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -80,6 +80,15 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
+        --Lspsaga
+        ["<leader>lk"] = { "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga Hover doc" },
+        ["<leader>lg"] = { "<cmd>Lspsaga goto_definition<CR>", desc = "Lspsaga Goto definition" },
+        ["<leader>lp"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Lspsaga Preview definition" },
+        ["<leader>lF"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga finder" },
+        ["<leader>lS"] = { "<cmd>Lspsaga outline<CR>", desc = "Lspsaga Symbols outline" },
+
+        ["<Leader>lR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
+        ["gR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function

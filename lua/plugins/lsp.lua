@@ -1,7 +1,7 @@
 return {
   {
     "ojroques/nvim-lspfuzzy",
-    event = "User AstroFile",
+    event = "LspAttach",
     dependencies = {
       {
         "junegunn/fzf",
