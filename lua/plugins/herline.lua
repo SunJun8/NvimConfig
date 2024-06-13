@@ -43,7 +43,6 @@ return {
         padding = { left = 1 },
         surround = { separator = "none" },
       }),
-      status.component.git_diff(),
       status.component.diagnostics(),
       status.component.fill(),
       status.component.cmd_info(),
