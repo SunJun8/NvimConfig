@@ -111,7 +111,8 @@ return {
           ["<Leader>lF"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga finder" },
           ["<Leader>lS"] = { "<cmd>Lspsaga outline<CR>", desc = "Lspsaga Symbols outline" },
 
-          ["<Leader>lR"] = { "<cmd>FzfLua lsp_references<CR>", desc = "Search references" },
+          ["<Leader>lR"] = { function() require("fzf-lua").lsp_references() end, desc = "Search references" },
+          ["<Leader>lG"] = { function() require("fzf-lua").lsp_live_workspace_symbols() end, desc = "Search workspace symbols" },
         },
       },
     },
