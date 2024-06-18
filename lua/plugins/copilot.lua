@@ -5,14 +5,16 @@ return {
   build = ":Copilot auth",
   event = "InsertEnter",
   dependencies = {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
+    {
+      "zbirenbaum/copilot-cmp",
+      config = function()
+        require("copilot_cmp").setup()
+      end
+    }
   },
   opts = {
     suggestion = {
-      enabled = true,
+      enabled = false,
       auto_trigger = true,
       debounce = 75,
       keymap = {

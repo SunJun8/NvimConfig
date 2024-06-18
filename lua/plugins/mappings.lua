@@ -91,7 +91,7 @@ return {
           -- clangformat
           -- ["<Leader>lm"] = { "<cmd>py3f /home/jokeo/tool/clang/tools/clang-format/clang-format.py<CR>", desc = "format cpp by clang format" },
         },
-        
+
         x = {
           ["gra"] = false,
         },
