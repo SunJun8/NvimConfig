@@ -28,11 +28,7 @@ return {
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true,         -- sets vim.opt.number
         spell = false,         -- sets vim.opt.spell
-        signcolumn = "auto",   -- sets vim.opt.signcolumn to yes
         wrap = false,          -- sets vim.opt.wrap
-        tabstop = 2,           -- number of space in a tab
-        shiftwidth = 2,        -- number of space inserted for indentation
-        expandtab = true,      -- enable the use of space in tab
       },
       g = {                    -- vim.g.<key>
         -- configure global vim variables (vim.g)
