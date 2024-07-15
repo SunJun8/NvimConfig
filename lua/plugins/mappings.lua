@@ -28,6 +28,9 @@ return {
           ["<Leader>C"]  = false,
           ["<Leader>x"]  = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
           ["<Leader>X"]  = { function() require("astrocore.buffer").close(0, true) end, desc = "Force close buffer" },
+          ["<Leader>xq"] = false,
+          ["<Leader>xl"] = false,
+
 
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
