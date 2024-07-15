@@ -6,6 +6,7 @@
 vim.filetype.add {
   extension = {
     defs = "make",
+    script = "ld",
   },
   filename = {
     -- ["Foofile"] = "fooscript",
