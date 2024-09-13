@@ -1,9 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    -- "Exafunction/codeium.nvim", -- add cmp source as dependency of cmp
-    "zbirenbaum/copilot.lua",
-    "zbirenbaum/copilot-cmp",
   },
   -- override the options table that is used in the `require("cmp").setup()` call
   opts = function(_, opts)
@@ -13,12 +10,11 @@ return {
 
     -- modify the sources part of the options table
     opts.sources = cmp.config.sources {
-      { name = "copilot", priority = 1200 },
+      { name = "codeium", priority = 1200 },
       { name = "nvim_lsp", priority = 1000 },
       { name = "luasnip", priority = 750 },
       { name = "buffer", priority = 500 },
       { name = "path", priority = 250 },
-      -- { name = "codeium", priority = 700 }, -- add new source
     }
 
     -- return the new table to be used
