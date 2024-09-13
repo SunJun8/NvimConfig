@@ -67,6 +67,8 @@ return {
           Object = "",
           Package = "",
           String = "",
+          copilot = "",
+          Codeium = "",
         }
       end,
     },

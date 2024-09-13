@@ -31,11 +31,4 @@ return {
       'nvim-tree/nvim-web-devicons',
     }
   },
-  {
-    "onsails/lspkind.nvim",
-    opts = function(_, opts)
-      opts.symbol_map.copolot = ""
-      vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
-    end
-  },
 }
