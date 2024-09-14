@@ -65,9 +65,20 @@ return {
       end,
     },
   },
-  opts = {},
+  opts = {
+    provider = "openai",
+    openai = {
+      endpoint = "https://api.holdai.top/v1",
+      model = "chatgpt-4o-latest", -- The model name to use with this provider
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 4096,
+      ["local"] = false,
+    },
+  },
   specs = { -- configure optional plugins
-    { -- if copilot.lua is available, default to copilot provider
+    {
+      -- if copilot.lua is available, default to copilot provider
       "zbirenbaum/copilot.lua",
       optional = true,
       specs = {
