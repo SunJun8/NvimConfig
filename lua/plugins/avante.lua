@@ -79,7 +79,6 @@ return {
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
       max_tokens = 4096,
-      ["local"] = false,
     },
     claude = {
       endpoint = "https://api.holdai.top/v1",
@@ -87,7 +86,6 @@ return {
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
       max_tokens = 8000,
-      ["local"] = false,
     },
   },
   specs = { -- configure optional plugins
