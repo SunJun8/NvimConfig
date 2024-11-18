@@ -1,14 +1,6 @@
 ---@type LazySpec
 return {
   {
-    "AstroNvim/astroui",
-    ---@type AstroUIOpts
-    opts = {
-      colorscheme = "sonokai",
-    },
-  },
-
-  {
     "sainnhe/sonokai",
     lazy = false,
     priority = 1000,
