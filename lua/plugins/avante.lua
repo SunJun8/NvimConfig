@@ -1,6 +1,7 @@
 return {
   "yetone/avante.nvim",
   build = ":AvanteBuild",
+  event = "VeryLazy",
   cmd = {
     "AvanteAsk",
     "AvanteBuild",
@@ -15,6 +16,23 @@ return {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
+    {
+      -- support for image pasting
+      "HakonHarnes/img-clip.nvim",
+      event = "VeryLazy",
+      opts = {
+        -- recommended settings
+        default = {
+          embed_image_as_base64 = false,
+          prompt_for_file_name = false,
+          drag_and_drop = {
+            insert_mode = true,
+          },
+          -- required for Windows users
+          use_absolute_path = true,
+        },
+      },
+    },
     {
       "AstroNvim/astrocore",
       opts = function(_, opts)
@@ -54,13 +72,21 @@ return {
     },
   },
   opts = {
-    provider = "openai",
+    provider = "claude",
     openai = {
       endpoint = "https://api.holdai.top/v1",
-      model = "chatgpt-4o-latest", -- The model name to use with this provider
+      model = "o1-mini", -- The model name to use with this provider
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
       max_tokens = 4096,
+      ["local"] = false,
+    },
+    claude = {
+      endpoint = "https://api.holdai.top/v1",
+      model = "claude-3-5-sonnet-20241022",
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 8000,
       ["local"] = false,
     },
   },
