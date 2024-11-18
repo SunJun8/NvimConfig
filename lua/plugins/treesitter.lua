@@ -19,6 +19,11 @@ return {
       "rust",
       "vim",
       "lua",
+      "xml",
+      "asm",
+      "bash",
+      "toml",
+      "json",
     }
 
     opts.indent = {
