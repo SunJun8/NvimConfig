@@ -72,13 +72,13 @@ return {
     },
   },
   opts = {
-    provider = "claude",
+    provider = "openai",
     openai = {
       endpoint = "https://api.holdai.top/v1",
-      model = "o1-mini", -- The model name to use with this provider
+      model = "gpt-4o-mini", -- The model name to use with this provider
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
-      max_tokens = 4096,
+      max_tokens = 8000,
     },
     claude = {
       endpoint = "https://api.holdai.top/v1",
