@@ -13,17 +13,8 @@ return {
       "markdown",
       "make",
       "cmake",
-      "ninja",
-      "go",
-      "html",
       "rust",
-      "vim",
       "lua",
-      "xml",
-      "asm",
-      "bash",
-      "toml",
-      "json",
     }
 
     opts.indent = {
