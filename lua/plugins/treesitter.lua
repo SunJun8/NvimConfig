@@ -15,6 +15,7 @@ return {
       "cmake",
       "rust",
       "lua",
+      "bash",
     }
 
     opts.indent = {
