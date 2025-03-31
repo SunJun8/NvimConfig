@@ -11,12 +11,12 @@ return {
       ensure_installed = {
         -- install language servers
         "clangd",
-        "lua_ls",
-        "rust_analyzer",
+        "lua-language-server",
         "pyright",
 
         -- install formatters
         -- "stylua",
+        "clang-format",
 
         -- install debuggers
         -- "debugpy",
