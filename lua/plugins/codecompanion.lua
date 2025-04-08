@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 return {
   "olimorris/codecompanion.nvim",
@@ -9,30 +9,54 @@ return {
 
   opts = {
     adapters = {
-      baidu_qianfan = function()
+      huoshan = function()
         return require("codecompanion.adapters").extend("openai_compatible", {
           env = {
-            url = "https://qianfan.baidubce.com/v2",
-            api_key = "bce-v3/ALTAK-axQPSEJGXIxcPJmJi57t9/7879a9a73a98b97f46e87c16f81e8ab2921e41a1",
-            chat_url = "/chat/completions",
+            url = "https://ark.cn-beijing.volces.com/api/v3/",
+            api_key = vim.fn.getenv("HUOSHAN_API_KEY"),
+            chat_url = "chat/completions",
+            models_endpoint = "ListEndpoints",
           },
+
           schema = {
             model = {
-              default = "deepseek-v3",
+              default = "ep-20250327112215-xq7r7",
+            },
+            temperature = {
+              order = 2,
+              mapping = "parameters",
+              type = "number",
+              optional = true,
+              default = 0.5,
+              desc = "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or top_p but not both.",
+              validate = function(n)
+                return n >= 0 and n <= 2, "Must be between 0 and 2"
+              end,
             },
           },
         })
       end,
-      tencent_hunyuan = function()
-        return require("codecompanion.adapters").extend("openai_compatible", {
+
+      openai = function()
+        return require("codecompanion.adapters").extend("openai", {
           env = {
-            url = "https://api.lkeap.cloud.tencent.com",
-            api_key = "sk-btDUpTR24tWgemYYtABOxMkpDo8D0yVq6igsuPgAX7TQAIzk",
-            chat_url = "/v1/chat/completions",
+            api_key = vim.fn.getenv("OPENAI_API_KEY"),
           },
+
           schema = {
             model = {
-              default = "deepseek-v3",
+              default = "gpt-4o",
+            },
+            temperature = {
+              order = 2,
+              mapping = "parameters",
+              type = "number",
+              optional = true,
+              default = 0.5,
+              desc = "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or top_p but not both.",
+              validate = function(n)
+                return n >= 0 and n <= 2, "Must be between 0 and 2"
+              end,
             },
           },
         })
@@ -41,16 +65,83 @@ return {
 
     strategies = {
       chat = {
-        adapter = "baidu_qianfan"
+        adapter = "huoshan",
+        chat = {
+          keymaps = {
+            send = {
+              modes = { n = "<C-s>", i = "<C-s>" },
+            },
+            close = {
+              modes = { n = "<C-c>", i = "<C-c>" },
+            },
+          },
+        },
+
+        inline = {
+          adapter = "huoshan",
+          keymaps = {
+            accept_change = {
+              modes = { n = "ga" },
+              description = "Accept the suggested change",
+            },
+            reject_change = {
+              modes = { n = "gj" },
+              description = "Reject the suggested change",
+            },
+          },
+          layout = "vertical", -- vertical|horizontal|buffer
+        },
+
+        cmd = {
+          adapter = "huoshan",
+        },
+      },
+    },
+
+    display = {
+      action_palette = {
+        width = 95,
+        height = 10,
+        prompt = "Prompt ", -- Prompt used for interactive LLM calls
+        provider = "default", -- Can be "default", "telescope", or "mini_pick". If not specified, the plugin will autodetect installed providers.
+        opts = {
+          show_default_actions = true, -- Show the default actions in the action palette?
+          show_default_prompt_library = true, -- Show the default prompt library in the action palette?
+        },
       },
 
-      inline = {
-        adapter = "baidu_qianfan"
-      }
+      chat = {
+        window = {
+          layout = "horizontal", -- float|vertical|horizontal|buffer
+          position = "bottom", -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
+          border = "single",
+          height = 0.4,
+          width = 0.45,
+          relative = "editor",
+        },
+      },
+
+      diff = {
+        enabled = true,
+        close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
+        layout = "vertical", -- vertical|horizontal split for default provider
+        opts = {
+          "internal",
+          "filler",
+          "closeoff",
+          "algorithm:patience",
+          "followwrap",
+          "linematch:120"
+        },
+        provider = "default", -- default|mini_diff
+      },
     },
 
     opts = {
-      log_level = "DEBUG",
+      log_level = "INFO",
+      language = "Chinese",
+      send_code = true,
     },
+
   }
 }
