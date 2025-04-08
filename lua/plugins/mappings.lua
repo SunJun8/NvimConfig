@@ -44,10 +44,8 @@ return {
 
           -- telescope
           ["<F8>"]       = {
-            function()
-              require("telescope.builtin").find_files { hidden = false, no_ignore = true }
-            end,
-            desc = 'Find all files',
+            function() require("snacks").picker.files { hidden = false, ignored = true } end,
+            desc = "Find all files",
           },
 
           -- tables with the `name` key will be registered with which-key if it's installed

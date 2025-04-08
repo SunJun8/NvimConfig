@@ -15,7 +15,7 @@ return {
         "pyright",
 
         -- install formatters
-        -- "stylua",
+        "stylua",
         "clang-format",
 
         -- install debuggers
