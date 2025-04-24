@@ -58,7 +58,9 @@ return {
             '--with-filename',
             '--line-number',
             '--column',
-            '--no-ignore'
+            '--no-ignore',
+            '--glob=!**/build_out/**',
+            '--glob=!cscope*'
           },
           options = {
             ['ignore-case'] = {
