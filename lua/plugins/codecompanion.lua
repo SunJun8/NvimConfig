@@ -20,7 +20,7 @@ return {
 
           schema = {
             model = {
-              default = "ep-20250327112215-xq7r7",
+              default = "deepseek-v3-250324",
             },
             temperature = {
               order = 2,
@@ -45,7 +45,7 @@ return {
 
           schema = {
             model = {
-              default = "gpt-4o",
+              default = "gpt-4.1",
             },
             temperature = {
               order = 2,
