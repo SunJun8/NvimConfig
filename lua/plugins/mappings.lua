@@ -78,7 +78,12 @@ return {
               require("snacks").picker.files {
                 hidden = true,
                 ignored = true,               -- 仍然允许列出 gitignored 等（可按需保留/去掉）
-                exclude = { ".cache/**" },    -- 排除 .cache 目录及其所有子文件/子目录
+                exclude = {
+                  ".cache/**",
+                  "*.o",
+                  "*.a",
+                  "*.idx"
+                },    -- 排除 .cache 目录及其所有子文件/子目录
               }
             end,
             desc = "Find all files",
