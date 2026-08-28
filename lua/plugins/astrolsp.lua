@@ -44,7 +44,7 @@ return {
     -- customize language server configuration passed to `vim.lsp.config`
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     config = {
-      clangd = { capabilities = { offsetEncoding = "utf-16" } },
+      clangd = { capabilities = { } },
     },
     -- customize how language servers are attached
     handlers = {
